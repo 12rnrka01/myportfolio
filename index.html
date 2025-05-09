@@ -43,14 +43,14 @@
     <section id="hero" class="d-flex align-items-center homeinfosection home" >
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center homeinfo">
                     <h1 id="name" class="reveal-on-scroll typing-text"></h1>
                     <h2 id="role" class="reveal-on-scroll typing-text"></h2>
                     <p id="description" class="reveal-on-scroll reveal-right"></p>
                     <div class="hero-social" id="homesocialcontainer">
                     </div>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img hidden" id="homeinfoprofile">
+                <div class="col-lg-6 order-1 order-lg-2 hero-img hidden " id="homeinfoprofile">
                     <img src="/api/placeholder/320/320" alt="" class="img-fluid">
                 </div>
             </div>
@@ -60,7 +60,7 @@
 
 
     <!-- About Section -->
-    <section id="about" class="about aboutsection reveal-on-scroll reveal-bottom"></section>
+    <section id="about" class="about aboutsection reveal-on-scroll reveal-right"></section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience bg-light reveal-on-scroll reveal-right"></section>
@@ -76,6 +76,20 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact bg-light reveal-on-scroll reveal-right"></section>
+
+
+
+    <button id="scrollTopBtn" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" class="arrow-icon" fill="none" stroke="white" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="progress-ring" viewBox="0 0 36 36">
+            <circle class="bg" cx="18" cy="18" r="16"></circle>
+            <circle class="progress" cx="18" cy="18" r="16"></circle>
+        </svg>
+    </button>
+
+
 
     <script src="js/data.js"></script>
     <script src="js/scripts.js"></script>

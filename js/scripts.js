@@ -327,3 +327,28 @@ finalContactHtml += `
 
 finalContactHtml += `</div></div>`;
 $('#contact').html(finalContactHtml);
+
+
+const btn = document.getElementById('scrollTopBtn');
+const progressCircle = btn.querySelector('.progress');
+
+function updateScrollProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  const dashOffset = 100 - progress;
+  progressCircle.style.strokeDashoffset = dashOffset;
+
+  if (scrollTop > 100) {
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+}
+
+btn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', updateScrollProgress);
+

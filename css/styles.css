@@ -20,6 +20,7 @@ body {
   color: var(--text-color);
   background-color: #f9f9f9;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 section {
@@ -583,6 +584,9 @@ footer .copyright {
   .section-title h2 {
     font-size: 28px;
   }
+  .homeinfosection .homeinfo{
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -606,6 +610,11 @@ footer .copyright {
   .hero-btn {
     padding: 10px 30px;
     font-size: 15px;
+  }
+
+  .homeinfosection .homeinfo{
+    text-align: center;
+    align-items: center;
   }
 }
 .hidden {
@@ -687,7 +696,6 @@ footer .copyright {
 }
 
 .education-item {
-  background: #f3f3f3;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -745,4 +753,79 @@ footer .copyright {
 
 .aboutsection{
   margin-top: 50px;
+}
+
+.rotate-wrapper {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-color) , #00f2fe);
+  transition: transform 1s ease-in-out;
+}
+
+.rotate-wrapper:hover {
+  transform: rotate(360deg);
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.1);
+}
+
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  transform: rotate(-90deg);
+  z-index: 1;
+}
+
+.progress-ring .bg {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 4;
+}
+
+.progress-ring .progress {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.2s;
 }
