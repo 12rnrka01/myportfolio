@@ -6,7 +6,7 @@
 
 /* Slide from Bottom */
 .reveal-bottom {
-  transform: translateY(100px);
+  transform: translateY(0px);
 }
 .reveal-bottom.show {
   opacity: 1;
@@ -15,7 +15,7 @@
 
 /* Slide from Left */
 .reveal-left {
-  transform: translateX(-100px);
+  transform: translateX(-0px);
 }
 .reveal-left.show {
   opacity: 1;
@@ -24,7 +24,7 @@
 
 /* Slide from Right */
 .reveal-right {
-  transform: translateX(100px);
+  transform: translateX(0px);
 }
 .reveal-right.show {
   opacity: 1;
@@ -52,7 +52,7 @@
 
 @keyframes typing {
   from { width: 0; }
-  to { width: 100%; }
+  to { width: max-content; }
 }
 
 @keyframes blink {
