@@ -18,6 +18,7 @@
 
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/transition.css">
 
 </head>
 <body>
@@ -43,9 +44,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1 id="name"></h1>
-                    <h2 id="Role"></h2>
-                    <p id="description"></p>
+                    <h1 id="name" class="reveal-on-scroll typing-text"></h1>
+                    <h2 id="role" class="reveal-on-scroll typing-text"></h2>
+                    <p id="description" class="reveal-on-scroll reveal-right"></p>
                     <div class="hero-social" id="homesocialcontainer">
                     </div>
                 </div>
@@ -59,24 +60,26 @@
 
 
     <!-- About Section -->
-    <section id="about" class="about aboutsection"></section>
+    <section id="about" class="about aboutsection reveal-on-scroll reveal-bottom"></section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience bg-light"></section>
+    <section id="experience" class="experience bg-light reveal-on-scroll reveal-right"></section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects"></section>
+    <section id="projects" class="projects reveal-on-scroll reveal-left"></section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills bg-light"></section>
+    <section id="skills" class="skills bg-light reveal-on-scroll reveal-right"></section>
 
     <!-- Education Section -->
-    <section id="education" class="education bg-light"></section>
+    <section id="education" class="education bg-light reveal-on-scroll reveal-left"></section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact bg-light"></section>
+    <section id="contact" class="contact bg-light reveal-on-scroll reveal-right"></section>
 
     <script src="js/data.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/transition.js"></script>
+
 </body>
 </html>
