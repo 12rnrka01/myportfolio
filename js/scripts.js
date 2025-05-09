@@ -1,5 +1,6 @@
 // Adding the navigation Bar from Variable
-debugger
+$('title').html(data.Home.Name);
+$('.navbar-brand').html(data.Home.Name);
 $.each(data, function(key) {
     $('#navBarAllTabs').append(`
         <li class="nav-item">
@@ -14,7 +15,6 @@ $('#role').html(data.Home.Role);
 $('#description').html(data.Home.Description);
 
 $.each(data.Home.Contact, function(key,data) {
-    debugger
     target_value = data.target ? data.target : '_self';
     $('.homeinfosection #homesocialcontainer').append(`
         <a href="${data.href}" target="${target_value}"><i class="${data.class}"></i></a>
