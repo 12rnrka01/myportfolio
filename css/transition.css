@@ -49,7 +49,7 @@
 
 .typing {
     display: inline-block;
-    /* white-space: nowrap; */
+    white-space: nowrap;
     overflow: hidden;
     width: 0;
     opacity: 1;
