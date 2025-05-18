@@ -1,66 +1,225 @@
-/* Base Reveal Styles */
+/* Transition and Animation Effects
+   Mobile-responsive transitions for portfolio website */
+
+/* Base reveal animation styles */
 .reveal-on-scroll {
-    opacity: 0;
-    transition: opacity 0.2s ease, transform 0.8s ease;
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
 }
 
-/* Slide from Bottom */
+.reveal-on-scroll.show {
+  opacity: 1;
+}
+
+/* Direction-based animations */
 .reveal-bottom {
-    transform: translateY(30px);
+  transform: translateY(40px);
 }
 .reveal-bottom.show {
-    opacity: 1;
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
-/* Slide from Left */
 .reveal-left {
-    transform: translateX(-30px);
+  transform: translateX(-40px);
 }
 .reveal-left.show {
-    opacity: 1;
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
-/* Slide from Right */
 .reveal-right {
-    transform: translateX(30px);
+  transform: translateX(40px);
 }
 .reveal-right.show {
-    opacity: 1;
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
-/* Fade In */
 .reveal-fade {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 .reveal-fade.show {
-    opacity: 1;
-    transform: scale(1);
+  transform: scale(1);
 }
 
-/* Typing effect — only for text */
-.typing-wrapper {
-    display: inline-block;
-    overflow: hidden;
-    border-right: 2px solid white;
+/* Staggered animation delays for multiple items */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Typing text animation */
+.typing-text {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.typing {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    opacity: 1;
-    animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
+.typing-text::after {
+  content: '|';
+  position: absolute;
+  right: -5px;
+  width: 8px;
+  opacity: 1;
+  animation: cursor 0.8s infinite;
+}
+
+@keyframes cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-active {
+  animation: typing 3.5s steps(40, end);
 }
 
 @keyframes typing {
-    from { width: 0; }
-    to { width: 20ch; }
+  from { width: 0 }
+  to { width: 100% }
 }
 
-@keyframes blink {
-    50% { border-color: transparent; }
+/* Section transitions */
+.section-transition {
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.section-transition:hover {
+  transform: translateY(-5px);
+}
+
+/* Hover animations for cards and elements */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill item animation on hover */
+.skill-item {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              background 0.3s ease,
+              color 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* Project card animations */
+.project-card {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar transition effects */
+.navbar {
+  transition: background-color 0.4s ease, 
+              padding 0.4s ease, 
+              box-shadow 0.4s ease;
+}
+
+/* Social icon animations */
+.hero-social a, 
+.footer-social a {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              background-color 0.3s ease,
+              color 0.3s ease;
+}
+
+.hero-social a:hover, 
+.footer-social a:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Button animations */
+.hero-btn {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(5, 99, 187, 0.3);
+}
+
+/* Scroll to top button animation */
+#scrollTopBtn {
+  transition: opacity 0.4s ease, 
+              transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              background-color 0.3s ease;
+}
+
+#scrollTopBtn.show:hover {
+  transform: scale(1.15);
+}
+
+/* Progress bar animation for skills */
+.progress-bar-animated {
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+.progress-bar-animated.show {
+  width: var(--skill-level);
+}
+
+/* Mobile optimizations to ensure smooth animations */
+@media (max-width: 768px) {
+  /* Reduce transition timing to avoid janky animations on mobile */
+  .reveal-on-scroll {
+    transition: opacity 0.4s ease-out, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  
+  /* Reduce the distance elements move during animation */
+  .reveal-left, .reveal-right {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  
+  .reveal-bottom {
+    transform: translateY(20px);
+  }
+  
+  /* Disable more intensive animations on mobile */
+  .hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .project-card:hover,
+  .education-item:hover,
+  .experience-box:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Optimize typing animation for mobile */
+  .typing-text {
+    white-space: normal;
+  }
+}
+
+/* Reduced motion preferences support */
+@media (prefers-reduced-motion) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
