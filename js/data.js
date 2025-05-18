@@ -1,6 +1,6 @@
 const data = {
   Home: {
-    Name: "Ravuri Akhilesh",
+    Name: "Ravuri &nbsp; Akhilesh",
     Role: "Software &nbsp; Developer",
     Description:
       "Enthusiastic full stack developer focused on creating efficient, user-friendly applications. Ready to contribute to a team, solve real-world problems, and grow professionally.",
